@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link rel="stylesheet" type="text/css" href="https://airtable.com/css/compiled/all.css" />
+  <style>
+    /* CSS Overrides */
+    .sharedForm .sharedFormField .title {
+      margin-bottom: 0px;
+    }
+
+    .formHeader{
+      padding: 1rem !important;
+    }
+
+    .sharedForm .sharedFormField {
+      margin-top: 12px;
+    }
+
+    .sharedForm .formSubmit{
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    p.warning::before {
+        content: "❌";
+        padding-right: 7px;
+    }
+
+    /* Form styling */
+    #airtableWdcForm .parsley-errors-list li::before {
+        content: "❌";
+        padding-right: 7px;
+    }
+    #airtableWdcForm .parsley-errors-list li{
+        color: red;
+        padding-left: 10px;
+        line-height: 1.5em;
+    }
+    
+    #airtableWdcForm .errorsContainer{
+        display: inline-block
+    }
+
+    #airtableBaseId.select {
+      width: 100%;
+      height: 34px;
+    }
+
+    #airtableBaseIdPointer{
+      display: none;
+    }
+
+    #airtableSwitchBaseInput{
+      font-style: italic;
+      float: right;
+      color: grey;
+    }
+  </style>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/dist/parsley.min.js" integrity="sha256-pEdn/pJ2tyT37axbEIPkyUUfuG1yXR0+YV+h+jphem4=" crossorigin="anonymous"></script>
+    <script src="https://connectors.tableau.com/libs/tableauwdc-2.3.latest.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/airtable@0.11.0/build/airtable.browser.js"
+        integrity="sha256-p/K0s4ZRy6mYh4fGnABFVF82IDaM4Nk5nEsLs0pGfGc=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>  
+  <title>Airtable - Tableau Web Data Connector </title>
+</head>
+
+<body class="disable-cell-selection noPointerEventsForBlockIframes noPointerEventsForPaneDivider"
+  data-interaction-mode="pointer">
+  <div id="hyperbaseContainer">
+    <div class="relative width-full height-full">
+      <div class="sharedForm overflow-auto webkit-touch-scroll">
+        <main class="form reactForm">
+        <form id="airtableWdcForm" data-parsley-validate="">
+          <div class="formContent">
+            <header>
+              <div class="formCoverImageContainer col-12 background-cover background-center"></div>
+              <div class="formHeader mx-auto max-width-2 lg-rounded-big md-rounded-big sm-rounded-big white">
+                <div class="formLogoImageContainer"></div>
+                <h1 class="formName">Airtable - Tableau Web Data Connector</h1>
+                <p class="formDescription break-word">Use this Tableau Web Data Connector from Tableau 2019.4+ to import the schema and records from your Airtable base.
+                </p>
+              </div>
+            </header>
+            <div class="formFieldAndSubmitContainer px3 py1">
+              <div class="formFieldContainer mx-auto max-width-2">
+                <div class="sharedFormField">
+                  <label for="airtableApiToken" class="title">API Key</label>
+                  <span id="errorsFor_airtableApiToken" class="errorsContainer"></span>
+                  <div class="description">Found on your account page at <a href="https://airtable.com/account" target="blank">airtable.com/account</a></div>
+                  <div class="cellContainer">
+                    <div class="cell formCell" data-columntype="text">
+                      <div class="flex-auto flex baymax">
+                        <input type="password"
+                          pattern="key[A-Za-z0-9]{5,}"
+                          data-parsley-pattern-message="Your API token should start with the letters 'key'"
+                          data-parsley-errors-container="#errorsFor_airtableApiToken"	
+                          data-parsley-trigger="focusin focusout"
+                          class="col-12 rounded border-thick border-darken2 border-darken3-hover detailCursor-border-blue border-blue-focus"
+                          value="" id="airtableApiToken" required=""  style="padding: 6px" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sharedFormField">
+                  <label for="airtableBaseId" class="title">Base</label>
+                  <span id="errorsFor_airtableBaseId" class="errorsContainer"></span>
+                  <div class="cellContainer">
+                    <div class="cell formCell" data-columntype="text">
+                      <div class="flex-auto flex baymax" id="airtableBaseIdContainer">
+                        <select class="select col-12 rounded border-thick border-darken2 border-darken3-hover detailCursor-border-blue border-blue-focus" id="airtableBaseId" name="airtableBaseId" required="" data-parsley-errors-container="#errorsFor_airtableBaseId" data-parsley-pattern-message="Your base ID should start with the letters 'app'">
+                          <option value="">(This list will populate after an API key is provided)</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class=""><a href="#" id="airtableSwitchBaseInput">Specify a base ID manually</a><span id="airtableBaseIdPointer">Your base ID can be found at the top your base's API docs (from <a href="https://airtable.com/api" target="blank">airtable.com/api</a>)</div>
+
+                </div>
+              </div>
+              <div class="formSubmit mx-auto max-width-2 baymax">
+                <div id="formValidationMessage" class="formValidationMessage focus-visible" tabindex="-1">
+                  <p></p>
+                </div>
+                <input type="submit"
+                  id="submitButton"
+                  class="submitButton blue rounded-big px2 py1 text-white strong huge border-none submit styled-input focus-visible pointer link-quiet"
+                  value="Go" />
+                <div class="mt2 quieter small">
+                  <!-- TODO form footer content could go here. -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        </main>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
