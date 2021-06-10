@@ -1,0 +1,31 @@
+{
+  "name": "airtable-tableau-wdc",
+  "version": "0.0.1",
+  "description": "A Tableau Web Data Connector to import records from an Airtable base into Tableau",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve",
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airtable-labs/airtable-tableau-wdc.git"
+  },
+  "keywords": [
+    "tableau",
+    "airtable",
+    "webdataconnector",
+    "wdc"
+  ],
+  "author": "Airtable Labs",
+  "bugs": {
+    "url": "https://github.com/airtable-labs/airtable-tableau-wdc/issues"
+  },
+  "homepage": "https://github.com/airtable-labs/airtable-tableau-wdc#readme",
+  "devDependencies": {
+    "serve": "^11.3.2",
+    "standard": "^16.0.3"
+  }
+}
