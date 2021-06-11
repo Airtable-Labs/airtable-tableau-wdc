@@ -4,7 +4,7 @@ This [Tableau Web Data Connector](https://tableau.github.io/webdataconnector/) (
 
 Learn about how to use a WDC with Tableau Desktop [here](https://tableau.github.io/webdataconnector/docs/wdc_use_in_tableau.html). The URL for this WDC, hosted on Github Pages, is:
 ```
-https://marks.github.io/airtable-tableau-wdc
+https://airtable-labs.github.io/airtable-tableau-wdc
 ``` 
 
 For additional information and notes, including a mapping of Airtable field types to Tableau column data types and roles you can expect to experience, visit the [NOTES.md](NOTES.md file in this repo)
@@ -12,7 +12,7 @@ For additional information and notes, including a mapping of Airtable field type
 
 ---- 
 
-⚠️ This project is provided without warranty and is not an official Airtable offering
+The software made available from this repository is not supported by Formagrid Inc (Airtable) or part of the Airtable Service.  It is made available on an "as is" basis and provided without express or implied warranties of any kind.
 
 ----
 
