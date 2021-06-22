@@ -241,7 +241,7 @@
       } catch (err) {
         console.error(err)
         $('div.formFieldAndSubmitContainer').hide()
-        $('.formHeader').append("<hr /><br /><p class='warning formDescription'>Load this Web Data Connector in Tableau version 2019.4 or higher. <a href='https://tableau.github.io/webdataconnector/docs/wdc_use_in_tableau.html'>More info.</a></p>")
+        $('.formHeader').append("<hr /><br /><p class='warning formDescription'>Use this Web Data Connector from Tableau version 2019.4 or higher. <a href='https://tableau.github.io/webdataconnector/docs/wdc_use_in_tableau.html'>More info.</a></p>")
       }
     }, 500)
 
