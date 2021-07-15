@@ -7,7 +7,7 @@ Learn about how to use a WDC with Tableau Desktop [here](https://tableau.github.
 https://airtable-labs.github.io/airtable-tableau-wdc
 ``` 
 
-For additional information and notes, including a mapping of Airtable field types to Tableau column data types and roles you can expect to experience, visit the [NOTES.md](NOTES.md file in this repo)
+For additional information and notes, including a mapping of Airtable field types to Tableau column data types and roles you can expect to experience, visit the [NOTES.md file in this repo](NOTES.md)
 * Note that the Metadata API is currently available to Airtable Enterprise customers. Customers on other plans can request Metadata API access [here](https://airtable.com/shrWl6yu8cI8C5Dh3).
 
 ---- 
