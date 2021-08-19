@@ -2,6 +2,10 @@
 
 This [Tableau Web Data Connector](https://tableau.github.io/webdataconnector/) (WDC) uses the Airtable Metadata* and Base APIs to fetch a base's list of tables and fields (schema) as well as all records and make them available to Tableau for visualization.
 
+📚 **Looking to learn how to use this Tableau Web Data Connector with an Airtable base?** [Visit the support article with step-by-step instructions and screenshots](https://support.airtable.com/hc/en-us/articles/4403856825367-Visualizing-records-from-Airtable-in-Tableau). The rest of this README is geared toward a technical audience.
+
+--- 
+
 Learn about how to use a WDC with Tableau Desktop [here](https://tableau.github.io/webdataconnector/docs/wdc_use_in_tableau.html). The URL for this WDC, hosted on Github Pages, is:
 ```
 https://airtable-labs.github.io/airtable-tableau-wdc
