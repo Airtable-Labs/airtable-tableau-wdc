@@ -11,7 +11,7 @@ This WDC attempts to import Airtable fields as the best matching Tableau data ty
 | autoNumber            	| string            	| dimension           	|                                                                                                         	|
 | barcode               	| string            	| dimension           	|                                                                                                         	|
 | button                	| -                 	| -                   	| This field is intentionally excluded and will not be shown in Tableau                                   	|
-| checkbox              	| bool              	| dimension           	|                                                                                                         	|
+| checkbox              	| bool              	| dimension           	| Tableau will show `True` when a checkbox cell is checked and `Null` when not checked based on how Airtable's REST API returns checkbox values                                                                                                        	|
 | count                 	| int               	| metric              	|                                                                                                         	|
 | createdBy             	| string            	| dimension           	| User's email address (Airtable UI shows user name)                                                      	|
 | createdTime           	| datetime          	| dimension           	| GMT                                                                                                     	|
