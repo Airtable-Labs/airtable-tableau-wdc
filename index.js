@@ -69,6 +69,8 @@
         return airtableRawValue.map(e => e.email).join(',')
       case 'createdBy':
         return airtableRawValue.email
+      case 'checkbox':
+        return airtableRawValue === true
       case 'lastModifiedBy':
         return airtableRawValue.email
       default: // default stringifying value (Tableau seems to be OK with this for numeric fields)
