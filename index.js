@@ -234,7 +234,8 @@
     const airtableSwitchBaseInput = $('#airtableSwitchBaseInput')
     const airtableBaseIdFieldId = '#airtableBaseId'
 
-    // After waiting half a second, attempt to parse the Tableau version to determine if the user is opening from within a supported version of Tableau
+    // Comment out Tableau version check to help with debugging/troubleshooting issue #9
+    /* // After waiting half a second, attempt to parse the Tableau version to determine if the user is opening from within a supported version of Tableau
     // If not, display some instructions
     setTimeout(function () {
       try {
@@ -245,7 +246,7 @@
         $('div.formFieldAndSubmitContainer').hide()
         $('.formHeader').append("<hr /><br /><p class='warning formDescription'>Use this Web Data Connector from Tableau version 2019.4 or higher. <a href='https://tableau.github.io/webdataconnector/docs/wdc_use_in_tableau.html'>More info.</a></p>")
       }
-    }, 500)
+    }, 500) */
 
     airtableSwitchBaseInput.on('click', function (e) {
       $('#airtableBaseIdContainer').html('<input type="text" pattern="app[A-Za-z0-9]{5,}" data-parsley-errors-container="#errorsFor_airtableBaseId" data-parsley-pattern-message="Your base ID should start with the letters \'app\'" class="col-12 line-height-4 rounded border-thick border-darken2 border-darken3-hover detailCursor-border-blue border-blue-focus detailCursor-stroked-blue-focus"  value="" id="airtableBaseId" required="" style="padding: 6px" />')
