@@ -93,7 +93,7 @@
                 <div class="sharedFormField">
                   <label for="airtableApiToken" class="title">Personal Access Token or API Key</label>
                   <span id="errorsFor_airtableApiToken" class="errorsContainer"></span>
-                  <div class="description">Create a <a href="https://airtable.com/developers/web/guides/personal-access-tokens" target="_blank">personal access token</a> (PAT) with 'data.records:read' and 'schema.bases:read' scopes from <a href="https://airtable.com/create/tokens" target="_blank">airtable.com/create/tokens</a>. Only bases you add to your PAT's 'Permissions' list will be available in the base list below.</div>
+                  <div class="description">Create a <a href="https://airtable.com/developers/web/guides/personal-access-tokens" target="_blank">personal access token</a> (PAT) with 'data.records:read' and 'schema.bases:read' scopes from <a href="https://airtable.com/create/tokens" target="_blank">airtable.com/create/tokens</a>.</div>
                   <div class="cellContainer">
                     <div class="cell formCell" data-columntype="text">
                       <div class="flex-auto flex baymax">
@@ -109,6 +109,7 @@
                 <div class="sharedFormField">
                   <label for="airtableBaseId" class="title">Base</label>
                   <span id="errorsFor_airtableBaseId" class="errorsContainer"></span>
+                  <div class="description">The list of bases below contain bases your PAT or API key have access to. If a base is missing, revisit your PAT's 'Permissions' allow list and refresh this page.</div>
                   <div class="cellContainer">
                     <div class="cell formCell" data-columntype="text">
                       <div class="flex-auto flex baymax" id="airtableBaseIdContainer">
