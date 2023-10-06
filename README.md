@@ -2,7 +2,7 @@
 
 This [Tableau Web Data Connector](https://tableau.github.io/webdataconnector/) (WDC) uses the Airtable Metadata* and Base APIs to fetch a base's list of tables and fields (schema) as well as all records and make them available to Tableau for visualization.
 
-📚 **Looking to learn how to use this Tableau Web Data Connector with an Airtable base?** [Visit the support article with step-by-step instructions and screenshots](https://support.airtable.com/hc/en-us/articles/4403856825367-Visualizing-records-from-Airtable-in-Tableau). The rest of this README is geared toward a technical audience.
+📚 **Looking to learn how to use this Tableau Web Data Connector with an Airtable base?** [Visit the support article with step-by-step instructions and screenshots](https://support.airtable.com/docs/en/visualizing-records-from-airtable-in-tableau). The rest of this README is geared toward a technical audience.
 
 --- 
 
@@ -13,7 +13,6 @@ https://airtable-labs.github.io/airtable-tableau-wdc
 
 For additional information and notes, including a mapping of Airtable field types to Tableau column data types and roles you can expect to experience, visit the [NOTES.md file in this repo](NOTES.md)
 * As of November 15, 2022, any Airtable user can use the Metadata API using Personal Access Tokens. Read the announcement [here](https://community.airtable.com/t/new-beta-new-api-authentication-methods-endpoints-and-public-api-docs/52714) and [create a personal access token](https://airtable.com/create/tokens) with access to your base(s) with `data.records:read` and `schema.bases:read` scopes.
-* ~~Note that the Metadata API is currently available to Airtable Enterprise customers. Customers on other plans can request Metadata API access [here](https://airtable.com/shrWl6yu8cI8C5Dh3)~~.
 
 ---- 
 
